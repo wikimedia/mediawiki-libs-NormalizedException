@@ -1,6 +1,6 @@
 <?php
 
-namespace Tests\Wikimedia\NormalizedException;
+namespace Wikimedia\NormalizedException\Tests;
 
 use Exception;
 use PHPUnit\Framework\TestCase;

@@ -1,0 +1,53 @@
+{
+	"name": "wikimedia/normalized-exception",
+	"description": "A helper for making exceptions play nice with PSR-3 logging",
+	"license": "MIT",
+	"homepage": "https://www.mediawiki.org/wiki/NormalizedException",
+	"authors": [
+		{
+			"name": "Gergő Tisza",
+			"email": "gtisza@wikimedia.org"
+		}
+	],
+	"autoload": {
+		"psr-4": {
+			"Wikimedia\\NormalizedException\\": "src/"
+		}
+	},
+	"autoload-dev": {
+		"psr-4": {
+			"Wikimedia\\NormalizedException\\Tests\\": "tests/"
+		}
+	},
+	"require": {
+		"php": ">=7.2.9"
+	},
+	"require-dev": {
+		"mediawiki/mediawiki-codesniffer": "35.0.0",
+		"mediawiki/mediawiki-phan-config": "0.10.6",
+		"mediawiki/minus-x": "1.1.1",
+		"ockcyp/covers-validator": "1.3.3",
+		"php-parallel-lint/php-console-highlighter": "^0.5",
+		"php-parallel-lint/php-parallel-lint": "1.2.0",
+		"phpunit/phpunit": "^8.5|^9.5"
+	},
+	"config": {
+		"optimize-autoloader": true,
+		"prepend-autoloader": false
+	},
+	"scripts": {
+		"test": [
+			"parallel-lint . --exclude vendor",
+			"phpunit",
+			"covers-validator",
+			"phpcs -sp",
+			"minus-x check ."
+		],
+		"phan": "phan --allow-polyfill-parser",
+		"cover": "phpunit --coverage-html coverage",
+		"fix": [
+			"minus-x fix .",
+			"phpcbf"
+		]
+	}
+}
