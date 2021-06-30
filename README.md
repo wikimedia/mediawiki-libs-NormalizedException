@@ -17,21 +17,21 @@ use Wikimedia\NormalizedException\INormalizedException;
 use Wikimedia\NormalizedException\NormalizedExceptionTrait;
 
 class MyException extends SomeException implements INormalizedException {
-    use NormalizedExceptionTrait;
+	use NormalizedExceptionTrait;
 
-    private $normalizedMessage;
-    private $context;
+	private $normalizedMessage;
+	private $context;
 
-    public function __construct( string $normalizedMessage, array $context = [] ) {
-        $this->getMessageFromNormalizedMessage( $normalizedMessage, $context );
-        $this->normalizedMessage = $normalizedMessage;
-        $this->context = $context;
-    }
+	public function __construct( string $normalizedMessage, array $context = [] ) {
+		$this->getMessageFromNormalizedMessage( $normalizedMessage, $context );
+		$this->normalizedMessage = $normalizedMessage;
+		$this->context = $context;
+	}
 }
 ```
 
 ```php
-    throw new MyException( 'Invalid value: {value}', [ 'value' => $value ] );
+	throw new MyException( 'Invalid value: {value}', [ 'value' => $value ] );
 ```
 
 Running tests
@@ -45,9 +45,8 @@ composer test
 History
 -------
 
-This library was split out of [MediaWiki][] changeset [670465][]. It was
-split out of the MediaWiki codebase and published as an independent library
-during the [MediaWiki 1.25][] development cycle.
+This library was split out of [MediaWiki][] changeset [670465][] during the
+MediaWiki 1.37 development cycle.
 
 
 ---
@@ -55,4 +54,3 @@ during the [MediaWiki 1.25][] development cycle.
 [670465]: https://gerrit.wikimedia.org/r/c/mediawiki/core/+/670465
 [Latest Stable Version]: https://poser.pugx.org/wikimedia/normalized-exception/v/stable.svg
 [License]: https://poser.pugx.org/wikimedia/normalized-exception/license.svg
-
