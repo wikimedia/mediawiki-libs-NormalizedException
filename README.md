@@ -31,7 +31,7 @@ class MyException extends SomeException implements INormalizedException {
 ```
 
 ```php
-	throw new MyException( 'Invalid value: {value}', [ 'value' => $value ] );
+throw new MyException( 'Invalid value: {value}', [ 'value' => $value ] );
 ```
 
 Running tests
