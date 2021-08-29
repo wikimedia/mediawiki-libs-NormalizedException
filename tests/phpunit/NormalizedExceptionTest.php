@@ -18,6 +18,13 @@ class NormalizedExceptionTest extends TestCase {
 		$this->assertSame( [ 'bar' => 'baz' ], $exception->getMessageContext() );
 		$this->assertSame( 1, $exception->getCode() );
 		$this->assertSame( $previousException, $exception->getPrevious() );
+
+		// Test default values
+		$exception = new NormalizedException( 'foo' );
+		$this->assertSame( 'foo', $exception->getNormalizedMessage() );
+		$this->assertSame( [], $exception->getMessageContext() );
+		$this->assertSame( 0, $exception->getCode() );
+		$this->assertNull( $exception->getPrevious() );
 	}
 
 	/** @dataProvider provideMessage */
