@@ -26,7 +26,7 @@ class NormalizedException extends Exception implements INormalizedException {
 		string $normalizedMessage,
 		array $messageContext = [],
 		int $code = 0,
-		Throwable $previous = null
+		?Throwable $previous = null
 	) {
 		$this->normalizedMessage = $normalizedMessage;
 		$this->messageContext = $messageContext;
