@@ -1,5 +1,8 @@
 # Release History
 
+# v2.1.0
+* Add trait method to be used as standard constructor
+
 # v2.0.0
 * [BREAKING CHANGE] Drop PHP 7.2 and PHP 7.3 support (James D. Forrester)
 * build: Adjust the version of PHPUnit used to only 9.5.28 (James D. Forrester)
