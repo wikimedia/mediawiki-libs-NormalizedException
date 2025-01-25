@@ -65,7 +65,7 @@ trait NormalizedExceptionTrait {
 	 * @see self::getMessageFromNormalizedMessage() for more information on the message and context.
 	 */
 	public function normalizedConstructor(
-		string $normalizedMessage = '',
+		string $normalizedMessage,
 		array $messageContext = [],
 		int $code = 0,
 		?Throwable $previous = null
