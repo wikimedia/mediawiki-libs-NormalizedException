@@ -51,4 +51,12 @@ class NormalizedExceptionTest extends TestCase {
 		];
 	}
 
+	public function testSubclass() {
+		if ( PHP_MAJOR_VERSION === 7 ) {
+			$this->markTestSkipped( 'Fails on PHP 7.4 - T384905' );
+		}
+		$e = new NormalizedExceptionSubclass( 'foo', 'message {a} {b}', [ 'a' => 1, 'b' => 2 ] );
+		$this->assertSame( 'message 1 2', $e->getMessage() );
+	}
+
 }
