@@ -16,7 +16,7 @@
 	},
 	"autoload-dev": {
 		"psr-4": {
-			"Wikimedia\\NormalizedException\\Tests\\": "tests/"
+			"Wikimedia\\NormalizedException\\Tests\\": "tests/phpunit/"
 		}
 	},
 	"require": {
