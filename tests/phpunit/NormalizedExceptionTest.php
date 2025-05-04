@@ -33,7 +33,7 @@ class NormalizedExceptionTest extends TestCase {
 		$this->assertSame( $expectedMessage, $exception->getMessage() );
 	}
 
-	public function provideMessage() {
+	public static function provideMessage() {
 		return [
 			[ 'foo', [ 'bar' => 'baz' ], 'foo' ],
 			[ '{foo}', [ 'bar' => 'baz' ], '{foo}' ],
